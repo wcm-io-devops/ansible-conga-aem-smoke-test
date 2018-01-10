@@ -1,0 +1,18 @@
+- name: Run publish test
+  static: no
+  include: publish-test.yml
+  with_items: "{{ conga_config.replication.author.publishTargets }}"
+  vars:
+    port: "{{ conga_config.quickstart.port }}"
+  loop_control:
+    loop_var: publish_target
+  when: conga_config.replication.author.publishTargets|length > 0
+
+- name: Run flush test
+  static: no
+  include: flush-test.yml
+  vars:
+    port: "{{ conga_config.quickstart.port }}"
+    flush_target: "{{ conga_config.replication.author.flushTarget }}"
+    type: "author"
+  when: conga_config.replication.author.flushTarget

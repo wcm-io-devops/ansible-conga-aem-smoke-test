@@ -1,0 +1,9 @@
+- name: "Running connection test for '{{ flush_target.name }}', type: '{{ type }}'"
+  uri:
+    url: "http://localhost:{{ port }}/etc/replication/agents.{{ type }}/flush_{{ flush_target.name }}.test.html"
+    user: "{{ aemst_user }}"
+    password: "{{ aemst_password }}"
+    force_basic_auth: yes
+    return_content: yes
+  register: flush_test_result
+  failed_when: aemst_flush_test_pattern not in flush_test_result.content

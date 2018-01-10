@@ -1,0 +1,4 @@
+aemst_publish_test_pattern: "succeeded"
+aemst_flush_test_pattern: "succeeded"
+aemst_user: admin
+aemst_password: admin

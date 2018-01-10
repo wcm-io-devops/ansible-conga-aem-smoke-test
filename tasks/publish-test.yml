@@ -1,0 +1,8 @@
+- name: Running connection test for '{{ publish_target.name }}'
+  uri:
+    url: "http://localhost:{{ port }}/etc/replication/agents.author/publish_{{ publish_target.name }}.test.html"
+    user: "{{ aemst_user }}"
+    password: "{{ aemst_password }}"
+    return_content: yes
+  register: connection_test_result
+  failed_when: aemst_publish_test_pattern not in connection_test_result.content
