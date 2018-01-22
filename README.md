@@ -17,19 +17,19 @@ higher.
 
 Available variables are listed below, along with default values (see `defaults/main.yml`):
 
-    aemst_publish_test_pattern: "succeeded"
+    conga_aemst_publish_test_pattern: "succeeded"
 
 The text to search for on the publish test result page
 
-    aemst_flush_test_pattern: "succeeded"
+    conga_aemst_flush_test_pattern: "succeeded"
 
 The text to search for on the flush test result page
 
-    aemst_user: admin
+    conga_aemst_user: admin
 
 The username to use
     
-    aemst_password: admin
+    conga_aemst_password: admin
 
 The password to use
 

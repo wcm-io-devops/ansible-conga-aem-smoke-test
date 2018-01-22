@@ -1,4 +1,4 @@
-aemst_publish_test_pattern: "succeeded"
-aemst_flush_test_pattern: "succeeded"
-aemst_user: admin
-aemst_password: admin
+conga_aemst_publish_test_pattern: "succeeded"
+conga_aemst_flush_test_pattern: "succeeded"
+conga_aemst_user: admin
+conga_aemst_password: admin
