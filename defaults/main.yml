@@ -1,4 +1,11 @@
+# The text to search for on the publish test result page
 conga_aemst_publish_test_pattern: "succeeded"
+
+# The text to search for on the flush test result page
 conga_aemst_flush_test_pattern: "succeeded"
+
+# The username to use.
 conga_aemst_user: admin
+
+# The password to use.
 conga_aemst_password: admin

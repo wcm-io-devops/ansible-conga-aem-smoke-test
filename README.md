@@ -19,19 +19,19 @@ Available variables are listed below, along with default values (see `defaults/m
 
     conga_aemst_publish_test_pattern: "succeeded"
 
-The text to search for on the publish test result page
+The text to search for on the publish test result page.
 
     conga_aemst_flush_test_pattern: "succeeded"
 
-The text to search for on the flush test result page
+The text to search for on the flush test result page.
 
     conga_aemst_user: admin
 
-The username to use
+The username to use.
     
     conga_aemst_password: admin
 
-The password to use
+The password to use.
 
 ## Dependencies
 
