@@ -1,6 +1,6 @@
-- name: Running connection test for '{{ publish_target.name }}'
+- name: "Running connection test for '{{ publish_target.name | regex_replace('\\.', '_') }}'"
   uri:
-    url: "http://localhost:{{ port }}/etc/replication/agents.author/publish_{{ publish_target.name }}.test.html"
+    url: "http://localhost:{{ port }}/etc/replication/agents.author/publish_{{ publish_target.name | regex_replace('\\.', '_') }}.test.html"
     user: "{{ conga_aemst_user }}"
     password: "{{ conga_aemst_password }}"
     return_content: yes
