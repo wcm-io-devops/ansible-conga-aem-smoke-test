@@ -1,6 +1,6 @@
-- name: "Running connection test for '{{ flush_target.name }}', type: '{{ type }}'"
+- name: "Running connection test for '{{ flush_target.name | regex_replace('\\.', '_') }}', type: '{{ type }}'"
   uri:
-    url: "http://localhost:{{ port }}/etc/replication/agents.{{ type }}/flush_{{ flush_target.name }}.test.html"
+    url: "http://localhost:{{ port }}/etc/replication/agents.{{ type }}/flush_{{ flush_target.name | regex_replace('\\.', '_') }}.test.html"
     user: "{{ conga_aemst_user }}"
     password: "{{ conga_aemst_password }}"
     force_basic_auth: yes
