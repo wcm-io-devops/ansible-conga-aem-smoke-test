@@ -1,4 +1,4 @@
-# conga-aem-smoke-test
+# wcm-io-devops.conga-aem-smoke-test
 
 This role runs smoke tests on AEM author and AEM publish instances based
 upon a CONGA configuration. The tests use the build in test
@@ -36,14 +36,14 @@ The password to use.
 ## Dependencies
 
 This role depends on the
-[conga-facts](https://github.com/wcm-io-devops/ansible-conga-facts) role
+[wcm-io-devops.conga-facts](https://github.com/wcm-io-devops/ansible-conga-facts) role
 for accessing the CONGA configuration model.
 
 ## Compiles the CONGA configuration and runs a smoke test for author and publish
 
     - hosts: localhost
 	  roles:
-	    - conga-maven
+	    - wcm-io-devops.conga-maven
 	
 	# run smoke tests for aem-author
     - hosts: "&{{ conga_environment }}:aem-author"
@@ -53,7 +53,7 @@ for accessing the CONGA configuration model.
         conga_role_mapping: aem-cms
     
       roles:
-        - conga-aem-smoke-test
+        - wcm-io-devops.conga-aem-smoke-test
     
     # run smoke tests for aem-publish
     - hosts: "&{{ conga_environment }}:aem-publish"
@@ -63,4 +63,4 @@ for accessing the CONGA configuration model.
         conga_role_mapping: aem-cms
     
       roles:
-        - conga-aem-smoke-test
+        - wcm-io-devops.conga-aem-smoke-test
