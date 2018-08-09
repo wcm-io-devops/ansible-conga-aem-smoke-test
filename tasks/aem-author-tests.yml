@@ -1,6 +1,5 @@
 - name: Run publish test
-  static: no
-  include: publish-test.yml
+  include_tasks: publish-test.yml
   with_items: "{{ conga_config.replication.author.publishTargets }}"
   vars:
     port: "{{ conga_config.quickstart.port }}"
@@ -9,8 +8,7 @@
   when: conga_config.replication.author.publishTargets|length > 0
 
 - name: Run flush test
-  static: no
-  include: flush-test.yml
+  include_tasks: flush-test.yml
   vars:
     port: "{{ conga_config.quickstart.port }}"
     flush_target: "{{ conga_config.replication.author.flushTarget }}"
