@@ -1,6 +1,5 @@
 - name: Run flush test
-  static: no
-  include: flush-test.yml
+  include_tasks: flush-test.yml
   vars:
     port: "{{ conga_config.quickstart.port }}"
     flush_target: "{{ conga_config.replication.publish.flushTarget }}"
