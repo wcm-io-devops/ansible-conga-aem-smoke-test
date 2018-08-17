@@ -25,11 +25,11 @@ The text to search for on the publish test result page.
 
 The text to search for on the flush test result page.
 
-    conga_aemst_user: admin
+    conga_aemst_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 
 The username to use.
     
-    conga_aemst_password: admin
+    conga_aemst_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
 
 The password to use.
 
