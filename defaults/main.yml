@@ -5,7 +5,7 @@ conga_aemst_publish_test_pattern: "succeeded"
 conga_aemst_flush_test_pattern: "succeeded"
 
 # The username to use.
-conga_aemst_user: admin
+conga_aemst_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 
 # The password to use.
-conga_aemst_password: admin
+conga_aemst_password: "{{ conga_config.quickstart.adminUser.password | default('admin')}}"
