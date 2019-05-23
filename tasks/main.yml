@@ -3,6 +3,5 @@
   when: "'aem-publish' in conga_variants"
 
 - name: "Run aem-author tests"
-  static: no
   include_tasks: aem-author-tests.yml
   when: "'aem-author' in conga_variants"
