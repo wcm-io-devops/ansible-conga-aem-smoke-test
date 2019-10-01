@@ -24,6 +24,10 @@
       - "{{ conga_aemst_publish_test_pattern }}"
       - connection_test_result
       - "{{ connection_test_result }}"
+      - conga_aemst_publish_test_pattern in connection_test_result.content
+      - "{{ conga_aemst_publish_test_pattern in connection_test_result.content }}"
+      - connection_test_result.content is search(conga_aemst_publish_test_pattern)
+      - "{{ connection_test_result.content is search(conga_aemst_publish_test_pattern) }}"
 
 - name: Assert that connection test was successful.
   assert:

@@ -26,6 +26,10 @@
       - "{{ conga_aemst_flush_test_pattern }}"
       - flush_test_result
       - "{{ flush_test_result }}"
+      - conga_aemst_flush_test_pattern in flush_test_result.content
+      - "{{ conga_aemst_flush_test_pattern in flush_test_result.content }}"
+      - flush_test_result.content is search(conga_aemst_flush_test_pattern)
+      - "{{ flush_test_result.content is search(conga_aemst_flush_test_pattern) }}"
 
 - name: Assert that flush test was successful.
   assert:
