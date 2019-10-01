@@ -14,6 +14,7 @@
     user: "{{ conga_aemst_user }}"
     password: "{{ conga_aemst_password }}"
     return_content: yes
+    timeout: "{{ conga_aemst_publish_test_timeout }}"
   register: connection_test_result
 
 - name: Debug output
