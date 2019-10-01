@@ -8,5 +8,6 @@
     user: "{{ conga_aemst_user }}"
     password: "{{ conga_aemst_password }}"
     return_content: yes
+    timeout: "{{ conga_aemst_publish_test_timeout }}"
   register: connection_test_result
   failed_when: conga_aemst_publish_test_pattern not in connection_test_result.content
