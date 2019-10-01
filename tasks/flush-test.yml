@@ -2,6 +2,12 @@
   set_fact:
     __flush_agent_name: "{{ flush_target.name | regex_replace('\\.', '_') }}"
 
+- name: Debug output
+  debug:
+    msg:
+      - __flush_agent_name
+      - "{{ __flush_agent_name }}"
+
 - name: "Running connection test for '{{ __flush_agent_name }}', type: '{{ type }}'."
   uri:
     url: "http://localhost:{{ port }}/etc/replication/agents.{{ type }}/flush_{{ __flush_agent_name }}.test.html"
@@ -11,3 +17,19 @@
     return_content: yes
   register: flush_test_result
   failed_when: conga_aemst_flush_test_pattern not in flush_test_result.content
+
+- name: Debug output
+  debug:
+    msg:
+      - conga_aemst_flush_test_pattern
+      - "{{ conga_aemst_flush_test_pattern }}"
+      - flush_test_result
+      - "{{ flush_test_result }}"
+
+- name: Assert that flush test was successful.
+  assert:
+    that:
+      - conga_aemst_flush_test_pattern in flush_test_result.content
+    success_msg: "Connection test for '{{ __publish_agent_name }}' successful."
+    fail_msg: "Connection test for '{{ __publish_agent_name }}' failed."
+

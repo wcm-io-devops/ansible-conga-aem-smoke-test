@@ -2,6 +2,12 @@
   set_fact:
     __publish_agent_name: "{{ publish_target.name | regex_replace('\\.', '_') }}"
 
+- name: Debug output
+  debug:
+    msg:
+      - __publish_agent_name
+      - "{{ __publish_agent_name }}"
+
 - name: "Running connection test for '{{ __publish_agent_name }}'."
   uri:
     url: "http://localhost:{{ port }}/etc/replication/agents.author/publish_{{ __publish_agent_name }}.test.html"
@@ -9,4 +15,18 @@
     password: "{{ conga_aemst_password }}"
     return_content: yes
   register: connection_test_result
-  failed_when: conga_aemst_publish_test_pattern not in connection_test_result.content
+
+- name: Debug output
+  debug:
+    msg:
+      - conga_aemst_publish_test_pattern
+      - "{{ conga_aemst_publish_test_pattern }}"
+      - connection_test_result
+      - "{{ connection_test_result }}"
+
+- name: Assert that connection test was successful.
+  assert:
+    that:
+      - conga_aemst_publish_test_pattern in connection_test_result.content
+    success_msg: "Connection test for '{{ __publish_agent_name }}' successful."
+    fail_msg: "Connection test for '{{ __publish_agent_name }}' failed."
