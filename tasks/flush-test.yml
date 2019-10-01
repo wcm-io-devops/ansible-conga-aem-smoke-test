@@ -35,6 +35,6 @@
   assert:
     that:
       - conga_aemst_flush_test_pattern in flush_test_result.content
-    success_msg: "Connection test for '{{ __publish_agent_name }}' successful."
-    fail_msg: "Connection test for '{{ __publish_agent_name }}' failed."
+    success_msg: "Connection test for '{{ __flush_agent_name }}' successful."
+    fail_msg: "Connection test for '{{ __flush_agent_name }}' failed."
 
