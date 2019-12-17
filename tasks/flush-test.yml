@@ -9,5 +9,6 @@
     password: "{{ conga_aemst_password }}"
     force_basic_auth: yes
     return_content: yes
+    timeout: "{{ conga_aemst_flush_test_timeout }}"
   register: flush_test_result
   failed_when: conga_aemst_flush_test_pattern not in flush_test_result.content

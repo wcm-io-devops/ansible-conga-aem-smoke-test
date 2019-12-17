@@ -26,9 +26,17 @@ Available variables are listed below, along with default values (see `defaults/m
 
 The text to search for on the publish test result page.
 
+    conga_aemst_publish_test_timeout: 60
+
+The timeout for the publish test.
+
     conga_aemst_flush_test_pattern: "succeeded"
 
 The text to search for on the flush test result page.
+
+    conga_aemst_flush_test_timeout: 60
+
+The timeout for the flush test.
 
     conga_aemst_user: "{{ conga_config.quickstart.adminUser.username | default('admin')}}"
 
