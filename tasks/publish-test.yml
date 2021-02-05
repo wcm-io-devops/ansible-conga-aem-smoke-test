@@ -1,3 +1,4 @@
+---
 - name: "Set publish agent name."
   set_fact:
     __publish_agent_name: "{{ publish_target.name | regex_replace('\\.', '_') }}"
