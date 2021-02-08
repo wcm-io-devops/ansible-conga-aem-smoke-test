@@ -1,3 +1,4 @@
+---
 - name: Run flush test
   include_tasks: flush-test.yml
   vars:

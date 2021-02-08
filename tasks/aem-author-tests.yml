@@ -1,3 +1,4 @@
+---
 - name: Run publish test
   include_tasks: publish-test.yml
   with_items: "{{ conga_config.replication.author.publishTargets }}"

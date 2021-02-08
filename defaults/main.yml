@@ -1,3 +1,4 @@
+---
 # The text to search for on the publish test result page
 conga_aemst_publish_test_pattern: "succeeded"
 

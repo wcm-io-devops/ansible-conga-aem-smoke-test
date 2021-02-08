@@ -1,3 +1,4 @@
+---
 - name: "Set flush agent name."
   set_fact:
     __flush_agent_name: "{{ flush_target.name | regex_replace('\\.', '_') }}"
