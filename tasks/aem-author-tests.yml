@@ -14,4 +14,4 @@
     port: "{{ conga_config.quickstart.port }}"
     flush_target: "{{ conga_config.replication.author.flushTarget }}"
     type: "author"
-  when: conga_config.replication.author.flushTarget
+  when: conga_config.replication.author.flushTarget.name
